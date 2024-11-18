@@ -3,9 +3,7 @@ class Solution {
         String answer = "";
         String[] r = rsp.split("");
         for(String a : r){
-            if(a.equals("2")) answer+= "0";
-            else if (a.equals("0")) answer+="5";
-            else if (a.equals("5")) answer+="2";
+            answer += a.equals("2") ? "0" : a.equals("0") ? "5" : "2";
         }
         return answer;
     }
