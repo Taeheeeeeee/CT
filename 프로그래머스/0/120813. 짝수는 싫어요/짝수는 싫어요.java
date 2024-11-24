@@ -1,13 +1,13 @@
 class Solution {
     public int[] solution(int n) {
-        int idx = n % 2 == 1 ? n / 2 + 1 : n / 2;
-        int[] answer = new int[idx];
-        
-        int num = 1;
-        for(int i = 0; i < idx; i++){
-            answer[i] = num;
-            num += 2;
+        int cnt = n % 2 != 0 ? n/2+1 : n/2;
+        int[] answer = new int[cnt];
+        int nn = 1;
+        for(int i = 0; i < cnt; i++){
+            answer[i] = nn;
+            nn += 2;
         }
+        
         return answer;
     }
 }
