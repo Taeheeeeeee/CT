@@ -1,11 +1,9 @@
+import java.util.Arrays;
+
 class Solution {
     public int solution(int[] array, int height) {
-        int answer = 0;
-        
-        for(int n : array){
-            if(n > height) answer++;
-        }
-        
-        return answer;
+        return (int) Arrays.stream(array)
+                .filter(i -> i > height)
+                .count();
     }
 }
