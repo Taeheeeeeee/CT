@@ -1,11 +1,16 @@
+import java.util.stream.IntStream;
 import java.util.Arrays;
 
 class Solution {
     public int[] solution(int[] num_list) {
-        int[] answer = {};
-        return Arrays.stream(num_list)
-                .collect(() -> new int[2],
-                        (result, i) -> result[i % 2]++,
-                        (r1, r2) -> { });
+        return IntStream.of(
+                        (int) Arrays.stream(num_list)
+                                .filter(i -> i % 2 == 0)
+                                .count(),
+                        (int) Arrays.stream(num_list)
+                                .filter(i -> i % 2 == 1)
+                                .count()
+                )
+                .toArray();
     }
 }
