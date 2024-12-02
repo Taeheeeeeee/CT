@@ -6,10 +6,8 @@ public class Solution {
         String str = sc.next();
         int n = sc.nextInt();
         
-        while (n > 0){
-            System.out.print(str);
-            n--;
-        }
+        System.out.println(str.repeat(n));
+
         
     }
 }
