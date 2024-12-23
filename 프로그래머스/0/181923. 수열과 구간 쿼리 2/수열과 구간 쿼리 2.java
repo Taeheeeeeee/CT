@@ -1,13 +1,14 @@
 import java.util.stream.IntStream;
+import java.util.Arrays;
 
 class Solution {
     public int[] solution(int[] arr, int[][] queries) {
-        return IntStream.range(0, queries.length)
-				.map(q -> IntStream.rangeClosed(queries[q][0], queries[q][1]) // s~e
+        return Arrays.stream(queries)
+				.mapToInt(q -> IntStream.rangeClosed(q[0], q[1])
 						.map(i -> arr[i])
-						.filter(i -> i > queries[q][2]) // k
-						.min().orElse(-1)
-				)
+						.filter(i -> i > q[2])
+						.min()
+						.orElse(-1))
 				.toArray();
     }
 }
